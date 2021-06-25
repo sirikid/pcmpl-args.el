@@ -18,7 +18,7 @@
       "runs-on": "ubuntu-latest",
       "steps": [
         {
-          "name": "checkout"
+          "name": "checkout",
           "uses": "actions/checkout@v2"
         },
         {
@@ -27,6 +27,10 @@
           "with": {
             "version": "24.1"
           }
+        },
+        {
+          "name": "install eldev",
+          "run": "curl -fsSL https://raw.github.com/doublep/eldev/master/webinstall/github-eldev | sh"
         },
         {
           "name": "lint",
