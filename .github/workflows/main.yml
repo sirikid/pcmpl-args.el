@@ -1,0 +1,34 @@
+{
+  "name": "ci",
+  "on": {
+    "push": {
+      "branches": [
+        "master"
+      ]
+    },
+    "pull_request": {
+      "branches": [
+        "master"
+      ]
+    },
+    "workflows_dispatch": {}
+  },
+  "jobs": {
+    "build": {
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "uses": "actions/checkout@v2"
+        },
+        {
+          "name": "lint",
+          "uses": "purcell/setup-emacs@master",
+          "with": {
+            "version": "24.1"
+          },
+          "run": "true"
+        }
+      ]
+    }
+  }
+}
