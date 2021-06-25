@@ -21,11 +21,14 @@
           "uses": "actions/checkout@v2"
         },
         {
-          "name": "lint",
+          "name": "setup emacs",
           "uses": "purcell/setup-emacs@master",
           "with": {
             "version": "24.1"
-          },
+          }
+        },
+        {
+          "name": "lint",
           "run": "true"
         }
       ]
